@@ -1,19 +1,168 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Panaderia Manjares</title>
-  <link rel="stylesheet" href="Panaderia/styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menú de Panadería - Manjares</title>
+  <link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
-  <div class="slider" id="slider">
-    <div class="card"><img src="Panaderia/IMG/VOAT.png" alt="Carta 1" /></div>
-    <div class="card"><img src="Panaderia/IMG/VORaj.png" alt="Carta 2" /></div>
-    <div class="card"><img src="Panaderia/IMG/VOJM.png" alt="Carta 3" /></div>
-     <div class="card"><img src="Panaderia/IMG/VOPL.png" alt="Carta 3" /></div>
+  <header>
+    <img src="img/logo.png" alt="Logo de Manjares" class="header-logo">
+    <h1>Menú de Panadería</h1>
+    <p>Bienvenido a Manjares</p>
+  </header>
+
+  <div class="menu-section">
+    <!-- Category: Panes Dulces -->
+    <div class="category">
+      <div class="category-header" onclick="toggleCategory('panes-dulces')">
+        <span>Panes Dulces</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div id="panes-dulces" class="category-list">
+        <div class="carousel-container">
+          <div class="carousel" id="carousel-panes-dulces">
+            <div class="product-card">
+              <img src="https://placehold.co/1400x1800?text=Panes%20Dulces" alt="Pan Dulce Clásico" class="product-image">
+              <div class="product-details">
+                <p class="product-name">Pan Dulce Clásico</p>
+                <p class="product-price">$5.00</p>
+              </div>
+            </div>
+            <div class="product-card">
+              <img src="https://placehold.co/1400x1800?text=Panes%20Dulces" alt="Pan Dulce Chocolate" class="product-image">
+              <div class="product-details">
+                <p class="product-name">Pan Dulce Chocolate</p>
+                <p class="product-price">$6.00</p>
+              </div>
+            </div>
+            <div class="product-card">
+              <img src="https://placehold.co/1400x1800?text=Panes%20Dulces" alt="Pan Dulce Frutilla" class="product-image">
+              <div class="product-details">
+                <p class="product-name">Pan Dulce Frutilla</p>
+                <p class="product-price">$7.00</p>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control prev" onclick="prevSlide('panes-dulces')">❮</button>
+          <button class="carousel-control next" onclick="nextSlide('panes-dulces')">❯</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Category: Volovanes -->
+    <div class="category">
+      <div class="category-header" onclick="toggleCategory('volovanes')">
+        <span>Volovanes</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div id="volovanes" class="category-list">
+        <div class="carousel-container">
+          <div class="carousel" id="carousel-volovanes">
+            <div class="product-card">
+              <img src="https://placehold.co/1400x1800?text=Volovanes" alt="Volován Tradicional" class="product-image">
+              <div class="product-details">
+                <p class="product-name">Volován Tradicional</p>
+                <p class="product-price">$8.00</p>
+              </div>
+            </div>
+            <div class="product-card">
+              <img src="https://placehold.co/1400x1800?text=Volovanes" alt="Volován Frutilla" class="product-image">
+              <div class="product-details">
+                <p class="product-name">Volován Frutilla</p>
+                <p class="product-price">$9.00</p>
+              </div>
+            </div>
+            <div class="product-card">
+              <img src="https://placehold.co/1400x1800?text=Volovanes" alt="Volován Chocolate" class="product-image">
+              <div class="product-details">
+                <p class="product-name">Volován Chocolate</p>
+                <p class="product-price">$10.00</p>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control prev" onclick="prevSlide('volovanes')">❮</button>
+          <button class="carousel-control next" onclick="nextSlide('volovanes')">❯</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Category: Pasteles -->
+    <div class="category">
+      <div class="category-header" onclick="toggleCategory('pasteles')">
+        <span>Pasteles</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div id="pasteles" class="category-list">
+        <div class="carousel-container">
+          <div class="carousel" id="carousel-pasteles">
+            <div class="product-card">
+              <img src="https://placehold.co/1400x1800?text=Pasteles" alt="Pastel de Queso" class="product-image">
+              <div class="product-details">
+                <p class="product-name">Pastel de Queso</p>
+                <p class="product-price">$12.00</p>
+              </div>
+            </div>
+            <div class="product-card">
+              <img src="https://placehold.co/1400x1800?text=Pasteles" alt="Pastel de Tres Leches" class="product-image">
+              <div class="product-details">
+                <p class="product-name">Pastel de Tres Leches</p>
+                <p class="product-price">$15.00</p>
+              </div>
+            </div>
+            <div class="product-card">
+              <img src="https://placehold.co/1400x1800?text=Pasteles" alt="Pastel de Chocolate" class="product-image">
+              <div class="product-details">
+                <p class="product-name">Pastel de Chocolate</p>
+                <p class="product-price">$18.00</p>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control prev" onclick="prevSlide('pasteles')">❮</button>
+          <button class="carousel-control next" onclick="nextSlide('pasteles')">❯</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Category: Postres -->
+    <div class="category">
+      <div class="category-header" onclick="toggleCategory('postres')">
+        <span>Postres</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div id="postres" class="category-list">
+        <div class="carousel-container">
+          <div class="carousel" id="carousel-postres">
+            <div class="product-card">
+              <img src="https://placehold.co/1400x1800?text=Postres" alt="Tarta de Manzana" class="product-image">
+              <div class="product-details">
+                <p class="product-name">Tarta de Manzana</p>
+                <p class="product-price">$20.00</p>
+              </div>
+            </div>
+            <div class="product-card">
+              <img src="https://placehold.co/1400x1800?text=Postres" alt="Flan de Caramel" class="product-image">
+              <div class="product-details">
+                <p class="product-name">Flan de Caramel</p>
+                <p class="product-price">$10.00</p>
+              </div>
+            </div>
+            <div class="product-card">
+              <img src="https://placehold.co/1400x1800?text=Postres" alt="Mousse de Limón" class="product-image">
+              <div class="product-details">
+                <p class="product-name">Mousse de Limón</p>
+                <p class="product-price">$15.00</p>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control prev" onclick="prevSlide('postres')">❮</button>
+          <button class="carousel-control next" onclick="nextSlide('postres')">❯</button>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <script src="Panaderia/script.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>

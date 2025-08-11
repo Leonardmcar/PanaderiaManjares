@@ -1,0 +1,321 @@
+/* styles.css */
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f5e7; /* Soft beige background */
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background: linear-gradient(135deg, #d2b48c, #f0e68c);
+  text-align: center;
+  padding: 20px 0;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: #ffffff;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+header p {
+  font-size: 1.2rem;
+  color: #ffffff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Menu Section */
+.menu-section {
+  max-width: 960px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+.category {
+  margin-bottom: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.category-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #d2b48c;
+  padding: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.category-header:hover {
+  background: #c8a87c;
+}
+
+.category-header span {
+  font-size: 1.5rem;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.category-header i {
+  font-size: 1.2rem;
+  color: #ffffff;
+  transition: transform 0.5s ease, opacity 0.3s ease;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.category-header.collapsed i {
+  transform: rotate(-180deg);
+}
+
+/* Animation for category expansion */
+.category-list {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease;
+  background: #fff;
+  padding: 0;
+}
+
+.category-list.show {
+  max-height: 1000px;
+  opacity: 1;
+  padding: 20px;
+  transition: max-height 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.8s ease;
+}
+
+/* Carousel Styles */
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease;
+  will-change: transform;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-right: 15px;
+  width: 280px;
+  height: 380px;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  animation: fadeIn 0.6s ease forwards;
+}
+
+.product-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.product-image {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.05);
+}
+
+.product-details {
+  padding: 15px;
+  text-align: center;
+  width: 100%;
+}
+
+.product-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.product-price {
+  font-size: 1.1rem;
+  color: #d2691e;
+  font-weight: bold;
+}
+
+/* Carousel Controls */
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(210, 180, 140, 0.8);
+  border: none;
+  font-size: 1.5rem;
+  color: #ffffff;
+  cursor: pointer;
+  z-index: 10;
+  padding: 12px;
+  border-radius: 50%;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-control:hover {
+  background: rgba(210, 180, 140, 1);
+  opacity: 1;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-control.prev {
+  left: 10px;
+}
+
+.carousel-control.next {
+  right: 10px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .menu-section {
+    padding: 0 10px;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .product-card {
+    width: 250px;
+    height: 350px;
+  }
+
+  .product-image {
+    height: 230px;
+  }
+
+  .carousel-control {
+    width: 35px;
+    height: 35px;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-card {
+    width: 220px;
+    height: 320px;
+  }
+
+  .product-image {
+    height: 200px;
+  }
+
+  .carousel-control {
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
+    opacity: 0.9;
+  }
+
+  .carousel-control.prev {
+    left: 5px;
+  }
+
+  .carousel-control.next {
+    right: 5px;
+  }
+}
+
+/* Add this to your CSS */
+.header-logo {
+  max-width: 400px;
+  height: auto;
+  display: block;
+  margin: 0 auto 15px;
+}
+
+/* For larger screens, position it to the left */
+@media (min-width: 768px) {
+  .header-logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    margin: 0;
+    max-width: 100px;
+  }
+  
+  header h1 {
+    margin-left: 130px;
+    text-align: left;
+  }
+  
+  header p {
+    margin-left: 130px;
+    text-align: left;
+  }
+}
+/* Cargar la fuente "Meditative" */
+@font-face {
+  font-family: 'Meditative';
+  src: url('/fonts/Meditative.ttf') format('truetype');
+}
+
+/* Cargar la fuente "NovaQuinta" */
+@font-face {
+  font-family: 'NovaQuinta';
+  src: url('/fonts/NovaQuinta.otf') format('opentype');
+}
+
+/* Aplicar la fuente "Meditative" a todo el texto */
+body {
+  font-family: 'Meditative', sans-serif; /* Fallback a sans-serif si la fuente no se carga */
+}
+
+/* Aplicar la fuente "NovaQuinta" a los títulos */
+h1, h2, h3, .category-header span {
+  font-family: 'NovaQuinta', cursive; /* Fallback a cursive si la fuente no se carga */
+}
