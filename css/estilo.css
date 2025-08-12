@@ -51,7 +51,7 @@ header p {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #d2b48c;
+  background: #53221f;
   padding: 15px;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -59,7 +59,7 @@ header p {
 }
 
 .category-header:hover {
-  background: #c8a87c;
+  background: #873f3b;
 }
 
 .category-header span {
@@ -282,20 +282,20 @@ header p {
 @media (min-width: 768px) {
   .header-logo {
     position: absolute;
-    top: 20px;
-    left: 20px;
+    top: 12px;
+    left: 50px;
     margin: 0;
-    max-width: 100px;
+    max-width: 190px;
   }
   
   header h1 {
-    margin-left: 130px;
-    text-align: left;
+    /*margin-left: 130px;*/
+    text-align: center;
   }
   
   header p {
-    margin-left: 130px;
-    text-align: left;
+    /*margin-left: 130px;*/
+    text-align: center;
   }
 }
 /* Cargar la fuente "Meditative" */
