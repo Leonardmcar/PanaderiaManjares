@@ -139,7 +139,7 @@ header p {
 
 .product-image {
   width: 100%;
-  height: 260px;
+  height: 280px;
   object-fit: cover;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
